@@ -72,4 +72,9 @@ public class OrderService {
         log.info("{} - {}", deleteMessage, id);
         return deleteMessage + " - " + id;
     }
+
+    public double price(Long id) {
+        Order existingOrder = get(id);
+        return existingOrder.getPrice();
+    }
 }

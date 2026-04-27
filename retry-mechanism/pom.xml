@@ -13,6 +13,7 @@
         <module>eurekaserver-service</module>
         <module>payment-service</module>
         <module>common-events</module>
+        <module>eureka-test-service</module>
     </modules>
 
     <properties>
