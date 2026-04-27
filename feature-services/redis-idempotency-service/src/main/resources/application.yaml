@@ -1,0 +1,9 @@
+server:
+  port: 8037
+
+spring:
+  application:
+    name: redis-idempotency-service
+  redis:
+    host: localhost
+    port: 6379

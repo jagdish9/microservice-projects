@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: scheduler-lock-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/scheduler-lock-service
+    username: root
+    password: mysql25
+
+  jdbc:
+    initialize-schema: always
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
+    com.example.schedulerlockservice: DEBUG

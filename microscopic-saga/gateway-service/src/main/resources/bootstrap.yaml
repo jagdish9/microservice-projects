@@ -1,0 +1,16 @@
+#You are using:
+#  spring-cloud-starter-bootstrap
+#That means:
+#  Vault config is loaded from bootstrap.yml, NOT application.yml
+
+spring:
+  cloud:
+    vault:
+      uri: http://localhost:8200
+      scheme: http
+      token: hvs.CXpuQiROJmm1qjVPZXZeU4hg #when vault will be started, copy Root Token value
+
+      kv:
+        enabled: true
+        backend: secret
+        default-context: jwt-secret

@@ -1,0 +1,14 @@
+spring.application.name=gateway-service
+
+server.port=8080
+
+spring.cloud.gateway.routes[0].id=order-service
+spring.cloud.gateway.routes[0].uri=http://localhost:8081
+spring.cloud.gateway.routes[0].predicates[0]=Path=/orders/**
+
+#logging.level.reactor.netty=DEBUG
+#logging.level.org.springframework.web=DEBUG
+#logging.level.org.springframework.cloud.gateway=TRACE
+
+jwt.secret=Zgc8AwPaabHnZft2VyqIBmNxNjCDZnNMNdT2NFQGYlk=
+

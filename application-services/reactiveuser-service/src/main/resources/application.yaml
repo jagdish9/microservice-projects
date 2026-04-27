@@ -1,0 +1,23 @@
+server:
+  port: 8201
+
+logging:
+  level:
+    reactor.netty: INFO
+    org.springframework.web.reactive.function.client: INFO
+  pattern:
+    level: "%5p [${spring.application.name:},%X{X-Correlation-ID}]"
+
+spring:
+  application:
+    name: reactiveuser-service
+  sql:
+    init:
+      mode: never
+  r2dbc:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: r2dbc:mysql://localhost:3306/user-service
+    username: root
+    password: mysql25
+  kafka:
+    bootstrap-servers: localhost:9092

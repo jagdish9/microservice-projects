@@ -1,0 +1,37 @@
+server:
+  port: 8300
+
+spring:
+  application:
+    name: order-service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      acks: all
+      retries: 5
+      enable-idempotence: true
+      transaction-id-prefix: tx-
+      properties:
+        retry.backoff.ms: 3000
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    consumer:
+      group-id: order-group
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/order-service
+    username: root
+    password: mysql25
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

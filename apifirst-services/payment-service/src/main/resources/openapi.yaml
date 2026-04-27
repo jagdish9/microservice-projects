@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: Payment API
+  version: 1.0.0
+
+servers:
+  - url: /api/v1
+
+paths:
+  /payments:
+    post:
+      operationId: processPayment
+      summary: Process payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRequest'
+      responses:
+        '200':
+          description: Payment success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentResponse'
+
+components:
+  schemas:
+    PaymentRequest:
+      type: object
+      required:
+        - orderId
+        - paymentToken
+      properties:
+        orderId:
+          type: string
+        paymentToken:
+          type: string
+        amount:
+          type: number
+
+    PaymentResponse:
+      type: object
+      properties:
+        paymentId:
+          type: string
+        status:
+          type: string

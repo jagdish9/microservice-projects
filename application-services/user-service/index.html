@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Form</title>
+</head>
+<body>
+
+<h2>User Registration</h2>
+
+<form id="form">
+    Name: <input type="text" id="name"><br><br>
+    Email: <input type="text" id="email"><br><br>
+    Age: <input type="number" id="age"><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let age = document.getElementById("age").value;
+
+    // Validation
+    if (!name || !email || !age) {
+        document.getElementById("msg").innerText = "All fields required";
+        return;
+    }
+
+    if (!email.includes("@")) {
+        document.getElementById("msg").innerText = "Invalid email";
+        return;
+    }
+
+    fetch("http://localhost:8010/api/users/create-user", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({name, email, age})
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("msg").innerText = "User saved!";
+    })
+    .catch(err => {
+        document.getElementById("msg").innerText = "Error!";
+    });
+});
+</script>
+
+</body>
+</html>

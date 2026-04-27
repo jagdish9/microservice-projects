@@ -1,0 +1,10 @@
+server:
+  port: 8036
+
+spring:
+  application:
+    name: caller-secure-service
+
+constant:
+  oauth2:
+    realm-uri: http://localhost:8080/realms/auth-realm/protocol/openid-connect/token

@@ -1,0 +1,16 @@
+<config xmlns="http://www.ehcache.org/v3">
+
+    <cache alias="employeeCache">
+        <key-type>java.lang.Long</key-type>
+        <value-type>com.application.hibernatecache.entity.EmployeeCache</value-type>
+
+        <resources>
+            <heap unit="entries">100</heap>
+        </resources>
+
+        <!--<expiry>
+            <ttl unit="minutes">10</ttl>
+        </expiry>-->
+    </cache>
+
+</config>

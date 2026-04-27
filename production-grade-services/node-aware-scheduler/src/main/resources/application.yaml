@@ -1,0 +1,12 @@
+server:
+  port: 8013
+
+spring:
+  application:
+    name: node-aware-scheduler
+
+scheduler:
+  allowed:
+    host: localhost
+  prefix: PROD-NODE-1
+  enabled: true

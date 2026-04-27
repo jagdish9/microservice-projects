@@ -1,0 +1,32 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/eureka-app
+    username: root
+    password: mysql25
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  kafka:
+    bootstrap-server: localhost:9092
+    producer:
+      retries: 3
+      acks: all
+      properties:
+        retry.backoff.ms: 2000
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

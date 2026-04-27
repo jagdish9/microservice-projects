@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.microscopic</groupId>
+    <artifactId>application-services</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>payment-service</module>
+        <module>premium-service</module>
+        <module>hibernate-cache</module>
+        <module>inventory-service</module>
+        <module>numerous-service</module>
+        <module>validation-service</module>
+        <module>paymentretry-service</module>
+        <module>batch-process</module>
+        <module>exception-service</module>
+        <module>external-service</module>
+        <module>reactiveuser-service</module>
+        <module>metadata-service</module>
+        <module>analytics-service</module>
+        <module>offer-service</module>
+        <module>peek-service</module>
+        <module>employee-service</module>
+        <module>user-service</module>
+        <module>h2-db-service</module>
+        <module>basic-auth-service</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>

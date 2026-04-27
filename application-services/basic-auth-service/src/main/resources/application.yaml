@@ -1,0 +1,21 @@
+server:
+  port: 8041
+
+spring:
+  application:
+    name: basic-auth-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: monitoring-version,health
+    #base-path: /actuator #Optional: change actuator base path
+    #enabled-by-default: false #To disable all endpoints
+  endpoint:
+    #health:
+      #enabled: false
+    beans:
+      enabled: false
+    env:
+      enabled: false

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/order-service
+    username: root
+    password: mysql25
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  redis:
+    host: localhost
+    port: 6379
+
+  cache:
+    type: redis
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      acks: all
+      transaction-id-prefix: tx-order-
+      enable-idempotence: true
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

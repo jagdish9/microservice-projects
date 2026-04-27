@@ -1,0 +1,18 @@
+server:
+  port: 9102
+
+spring:
+  application:
+    name: payment-service
+  security:
+    oauth2:
+      client:
+        registration:
+          my-client:
+            client-id: client-app
+            client-secret: secret
+            authorization-grant-type: client_credentials
+            scope: read
+        provider:
+          my-client:
+            token-uri: http://localhost:9100/oauth2/token

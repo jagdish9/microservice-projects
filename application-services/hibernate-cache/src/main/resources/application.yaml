@@ -1,0 +1,24 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: hibernate-cache
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/payment-service
+    username: root
+    password: mysql25
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        generate_statistics: true
+        cache:
+          use_second_level_cache: true
+          use_query_cache: true
+        javax:
+          cache:
+            provider: org.ehcache.jsr107.EhcacheCachingProvider
