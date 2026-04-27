@@ -16,6 +16,7 @@
         <module>secure-api-service</module>
         <module>caller-secure-service</module>
         <module>redis-idempotency-service</module>
+        <module>api-call-service</module>
     </modules>
 
     <properties>
