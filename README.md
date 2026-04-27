@@ -1,5 +1,5 @@
 Microservice projects contains examples of:
-Idempoteny
+Idempotency
   Table based
   Redis based
 Caching
@@ -15,8 +15,8 @@ Load Balancer
   Nginx
 Routing
   Using Api Gateway
-Fetcing secret from vault
-  HashiCorp Vault
+Fetching secret from vault
+    HashiCorp Vault
 Distributed tracing
   Zipkin
 Authentication and Authorization
@@ -26,4 +26,4 @@ Service Discovery
 Service Monitoring
   Prometheus and Grafana
 Synchronous and Asynchronous communication
-  RestTeample, WebClient and Kafka
+  RestTemplate, WebClient and Kafka
