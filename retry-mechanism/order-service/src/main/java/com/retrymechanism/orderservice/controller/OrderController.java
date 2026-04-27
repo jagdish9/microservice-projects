@@ -40,4 +40,9 @@ public class OrderController {
     public String delete(@PathVariable Long id) {
         return orderService.deleteById(id);
     }
+
+    @GetMapping("/test/{id}")
+    public double price(@PathVariable Long id) {
+        return orderService.price(id);
+    }
 }
