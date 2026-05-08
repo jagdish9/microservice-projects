@@ -1,4 +1,4 @@
-package com.appservice.secureapiservice.config;
+package com.appservice.effectiverestapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,21 +18,23 @@ import java.util.Map;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(csrf -> csrf.disable())
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/public/**").permitAll()
-                        .requestMatchers("/api/auth/user/**").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/api/auth/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/employees/public/**").permitAll()
+                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/api/v1/employees/secure/").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated()
                 )
-                .oauth2ResourceServer(oauth2 -> oauth2
-                        .jwt(jwt -> jwt
-                                .jwtAuthenticationConverter(jwtAuthenticationConverter()))
+                .oauth2ResourceServer(
+                        oauth2 ->
+                                oauth2.jwt(
+                                        jwt -> jwt
+                                                .jwtAuthenticationConverter(jwtAuthenticationConverter())
+                                )
                 );
-
-        return http.build();
+         return http.build();
     }
 
     //Convert Keycloak roles → Spring roles
@@ -42,16 +44,13 @@ public class SecurityConfig {
                 new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwt -> {
             Collection<GrantedAuthority> authorities = new ArrayList<>();
-
             Map<String, Object> realmAccess = (Map<String, Object>) jwt.getClaims().get("realm_access");
 
             if(realmAccess != null) {
-                Collection<String> roles =
-                        (Collection<String>) realmAccess.get("roles");
+                Collection<String> roles = (Collection<String>) realmAccess.get("roles");
 
                 if(roles != null) {
-                    roles.forEach(role ->
-                            authorities.add(new SimpleGrantedAuthority("ROLE_" + role)));
+                    roles.forEach(role -> authorities.add(new SimpleGrantedAuthority("ROLE_"+role)));
                 }
             }
 
