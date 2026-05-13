@@ -20,7 +20,7 @@ Microservice projects contains examples of:
 *  Distributed tracing  
     *  Zipkin  
 *  Authentication and Authorization  
-    *  OAuth2 and JWT  
+    *  OAuth2 and JWT (Keycloak) 
 *  Service Discovery  
     *  Eureka  
 *  Service Monitoring  
@@ -41,3 +41,9 @@ Microservice projects contains examples of:
    *  Using yml property (This required code changes, not recommended)
 *  Scheduler run on specific VMs
    *  Using yml property (VM starts with specific name like PROD-*)
+*  Versioning
+   * URI versioning
+*  RESTful APIs in UI
+   * Swagger
+* Filtering and Searching
+   * JPA Specification
