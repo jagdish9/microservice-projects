@@ -14,6 +14,7 @@
         <module>payment-service</module>
         <module>scheduler-lock-service</module>
         <module>node-aware-scheduler</module>
+        <module>lock-service</module>
     </modules>
 
     <properties>
