@@ -1,0 +1,39 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: effective-rest-api
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/design-service
+    username: root
+    password: mysql25
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  redis:
+    host: localhost
+    port: 6379
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/auth-realm #(Spring Boot will: Fetch public key automatically, Validate JWT signature)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,env,beans,mappings,info
+    endpoint:
+      metrics:
+        enabled: false
+
+file:
+  upload-dir: D:\tmp\fle4
