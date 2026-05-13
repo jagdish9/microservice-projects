@@ -26,7 +26,12 @@ Microservice projects contains examples of:
 *  Service Monitoring  
     *  Prometheus and Grafana  
 *  Synchronous and Asynchronous communication  
-    * RestTemplate, WebClient and Kafka  
+    * RestTemplate, WebClient and Kafka
+*  Workload Distribution
+    * Load balancing
+    * Horizantal Scaling (Multiple instances in different VMs)
+    * Asynchronous messaging using Kafka
+    * Partitioning (Same database) / Sharding (Different database servers)
 *  Prevent DeadLock
     * Optimistic and Pessimistic Locking
 *  Distributed Transaction
