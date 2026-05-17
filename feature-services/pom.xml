@@ -18,6 +18,7 @@
         <module>redis-idempotency-service</module>
         <module>api-call-service</module>
         <module>effective-rest-api</module>
+        <module>cqrs-service</module>
     </modules>
 
     <properties>
