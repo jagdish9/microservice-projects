@@ -52,3 +52,5 @@ Microservice projects contains examples of:
    * Swagger
 * Filtering and Searching
    * JPA Specification
+* Separate READ operations from WRITE operations
+   * Use CQRS (Command Query Responsibility Segregation) pattern
