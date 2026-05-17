@@ -1,4 +1,4 @@
-#   microservice components
+#   microservice-components
 
 Microservice projects contains examples of:  
 *  Idempotency    
