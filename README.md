@@ -56,3 +56,7 @@ Microservice projects contains examples of:
    * JPA Specification
 * Separate READ operations from WRITE operations
    * Use CQRS (Command Query Responsibility Segregation) pattern
+* Create topic programmatically
+   * Use Kafka AdminClient and have topic details in yaml file
+* Schema registry
+   * Avro (with docker env)
