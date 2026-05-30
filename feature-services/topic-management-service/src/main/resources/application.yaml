@@ -1,0 +1,22 @@
+server:
+  port: 8075
+
+spring:
+  application:
+    name: topic-management-service
+  kafka:
+    bootstrap-servers: localhost:9092
+
+kafka:
+  topics:
+    - name: order-created
+      partitions: 3
+      replication-factor: 1
+
+    - name: payment-created
+      partitions: 3
+      replication-factor: 1
+
+    - name: notification-created
+      partitions: 3
+      replication-factor: 1

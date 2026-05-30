@@ -19,6 +19,7 @@
         <module>api-call-service</module>
         <module>effective-rest-api</module>
         <module>cqrs-service</module>
+        <module>topic-management-service</module>
     </modules>
 
     <properties>
