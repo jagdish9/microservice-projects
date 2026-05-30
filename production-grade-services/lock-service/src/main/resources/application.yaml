@@ -1,0 +1,15 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: lock-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/account-lock-service
+    username: root
+    password: mysql25
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

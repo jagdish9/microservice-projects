@@ -1,0 +1,19 @@
+server:
+  port: 8103
+
+spring:
+  application:
+    name: eureka-test-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+services:
+  order: order-service
+
+logging:
+  level:
+    org.springframework.cloud.loadbalancer: DEBUG
+    org.springframework.cloud.client.discovery: DEBUG

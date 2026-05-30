@@ -1,0 +1,9 @@
+server:
+  port: 8045
+
+spring:
+  application:
+    name: api-call-service
+
+api:
+  base-url: https://jsonmock.hackerrank.com/api/football_matches

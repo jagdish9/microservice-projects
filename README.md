@@ -1,3 +1,5 @@
+#   microservice-components
+
 Microservice projects contains examples of:  
 *  Idempotency    
     *  Table based  
@@ -29,7 +31,7 @@ Microservice projects contains examples of:
     * RestTemplate, WebClient and Kafka
 *  Workload Distribution
     * Load balancing
-    * Horizantal Scaling (Multiple instances in different VMs)
+    * Horizontal Scaling (Multiple instances in different VMs)
     * Asynchronous messaging using Kafka
     * Partitioning (Same database) / Sharding (Different database servers)
 *  Prevent DeadLock
